@@ -1,0 +1,21 @@
+<body>
+    <div class="edit-remove-person-container">
+        <h2>Edit/Remove Person</h2>
+        <form method="post" action="{{ url_for('edit_remove_person', person_id=person[0]) }}">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="{{ person[1] }}" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" value="{{ person[2] }}" required>
+
+            <button type="submit">Save Changes</button>
+        </form>
+
+        <form method="post" action="{{ url_for('remove_person', person_id=person[0]) }}">
+            <button type="submit">Remove Person</button>
+        </form>
+
+        <button onclick="location.href='{{ url_for('main') }}'">Cancel</button>
+    </div>
+</body>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">

@@ -1,0 +1,178 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    max-width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container h2 {
+    text-align: center;
+}
+
+.login-container label {
+    display: block;
+    margin-top: 10px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #45a049;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.left-panel {
+    max-width: 300px;
+}
+
+.left-panel form {
+    margin-bottom: 20px;
+}
+
+.left-panel label {
+    display: block;
+    margin-top: 10px;
+}
+
+.left-panel input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.left-panel button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.left-panel button:hover {
+    background-color: #45a049;
+}
+
+.right-panel {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.person-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+}
+
+.person-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.person-card h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.person-card p {
+    margin: 0;
+}
+
+.person-card div {
+    margin-top: 10px;
+}
+
+.person-card button {
+    width: 48%;
+    padding: 8px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.person-card button:hover {
+    background-color: #45a049;
+}
+
+.add-person-container,
+.edit-remove-person-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-person-container h2,
+.edit-remove-person-container h2 {
+    text-align: center;
+}
+
+.add-person-container label,
+.edit-remove-person-container label {
+    display: block;
+    margin-top: 10px;
+}
+
+.add-person-container input,
+.edit-remove-person-container input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.add-person-container button,
+.edit-remove-person-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-person-container button:hover,
+.edit-remove-person-container button:hover {
+    background-color: #45a049;
+}

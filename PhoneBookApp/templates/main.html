@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <!-- Add the Bootstrap CSS link here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        .left-panel {
+            width: 30%;
+        }
+
+        .right-panel {
+            width: 60%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contact-card {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .contact-card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-card img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .contact-details {
+            margin-top: 10px;
+        }
+
+        .edit-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="left-panel">
+            <form method="get" action="{{ url_for('main') }}">
+                <div class="form-group">
+                    <label for="search">Search:</label>
+                    <input type="text" id="search" name="search" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">Find</button>
+            </form>
+            <button onclick="location.href='{{ url_for('add_person') }}'" class="btn btn-success mt-3">New contact</button>
+        </div>
+
+        <div class="right-panel">
+            {% for person in people %}
+            <div class="contact-card">
+                <img src="{{ person['PHOTO_URL'] }}" alt="Person Photo" class="img-fluid">
+                <div class="contact-details">
+                    <p><strong>Name:</strong> {{ person['NAME'] }}</p>
+                    <p><strong>Phone:</strong> {{ person['PHONE_NUMBER'] }}</p>
+                    <a href="{{ url_for('edit_remove_person', person_id=person['ID']) }}" class="edit-link">Edit</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Add the Bootstrap JS and Popper.js scripts at the end of the <body> section -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
